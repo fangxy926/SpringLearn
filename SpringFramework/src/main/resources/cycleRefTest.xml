@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    &lt;!&ndash; 均采用构造器注入 &ndash;&gt;-->
+<!--    <bean id="A" class="bean.cycleReference.A">-->
+<!--        <constructor-arg index="0" ref="B"/>-->
+<!--    </bean>-->
+<!--    <bean id="B" class="bean.cycleReference.B">-->
+<!--        <constructor-arg index="0" ref="A"/>-->
+<!--    </bean>-->
+
+    <!--均采用setter方法注入-->
+    <bean id="A" class="com.example.cycleReference.A">
+        <property name="B" ref="B"/>
+    </bean>
+    <bean id="B" class="com.example.cycleReference.B">
+        <property name="A" ref="A"/>
+    </bean>
+
+<!--    &lt;!&ndash;A中注入B的方式为setter方法，B中注入A的方式为构造器&ndash;&gt;-->
+<!--    <bean id="A" class="bean.cycleReference.A">-->
+<!--        <property name="B" ref="B"/>-->
+<!--    </bean>-->
+<!--    <bean id="B" class="bean.cycleReference.B">-->
+<!--        <constructor-arg index="0" ref="A"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;B中注入A的方式为setter方法，A中注入B的方式为构造器&ndash;&gt;-->
+<!--    <bean id="A" class="bean.cycleReference.A">-->
+<!--        <constructor-arg index="0" ref="B"/>-->
+<!--    </bean>-->
+<!--    <bean id="B" class="bean.cycleReference.B">-->
+<!--        <property name="A" ref="A"/>-->
+<!--    </bean>-->
+</beans>
