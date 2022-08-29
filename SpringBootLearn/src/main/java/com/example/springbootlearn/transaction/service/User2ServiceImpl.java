@@ -21,11 +21,27 @@ public class User2ServiceImpl implements User2Service {
         user2Dao.insert(user);
     }
 
+
+    public void addNoTransaction(User2 user) {
+        user2Dao.insert(user);
+    }
+
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void addRequiredException(User2 user) {
         user2Dao.insert(user);
         throw new RuntimeException();
+    }
+
+    @Override
+//    @Transactional(propagation = Propagation.REQUIRED)
+    public void addRequiredException2(User2 user) {
+        try {
+            user2Dao.insert(user);
+            throw new Exception();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

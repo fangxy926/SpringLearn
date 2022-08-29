@@ -14,6 +14,11 @@ public class User1ServiceImpl implements User1Service {
     private User1Dao user1Dao;
 
     @Override
+    public void addNoTransaction(User1 user) {
+        user1Dao.insert(user);
+    }
+
+    @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void addRequired(User1 user) {
         user1Dao.insert(user);

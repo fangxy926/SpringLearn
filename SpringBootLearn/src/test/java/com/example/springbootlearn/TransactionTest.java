@@ -105,6 +105,7 @@ public class TransactionTest {
         // 结果：user1和user2都插入失败
     }
 
+
     /**
      * 场景2.1：REQUIRES_NEW 外围方法没有开启事务
      */
