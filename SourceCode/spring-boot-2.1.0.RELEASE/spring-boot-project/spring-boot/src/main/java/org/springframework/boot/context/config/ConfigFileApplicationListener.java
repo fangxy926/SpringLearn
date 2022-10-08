@@ -104,7 +104,7 @@ public class ConfigFileApplicationListener
 
 	private static final String DEFAULT_PROPERTIES = "defaultProperties";
 
-	// Note the order is from least to most specific (last one wins)
+	// Note the order is from least to most specific (last one wins) 配置文件的加载优先级顺序倒叙，file:./config/配置文件的优先级最高
 	private static final String DEFAULT_SEARCH_LOCATIONS = "classpath:/,classpath:/config/,file:./,file:./config/";
 
 	private static final String DEFAULT_NAMES = "application";

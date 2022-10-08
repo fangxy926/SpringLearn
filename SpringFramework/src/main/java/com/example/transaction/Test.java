@@ -1,6 +1,7 @@
 package com.example.transaction;
 
-import org.springframework.transaction.TransactionDefinition;
+import java.sql.Driver;
 
 public class Test {
+    Driver driver;
 }

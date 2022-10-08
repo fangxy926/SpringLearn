@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: file-config-profile
+
+test:
+  profile: dev

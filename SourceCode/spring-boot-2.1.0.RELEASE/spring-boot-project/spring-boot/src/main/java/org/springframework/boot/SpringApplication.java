@@ -304,7 +304,7 @@ public class SpringApplication {
 			ApplicationArguments applicationArguments = new DefaultApplicationArguments(
 					args);
 			ConfigurableEnvironment environment = prepareEnvironment(listeners,
-					applicationArguments); // 2. 配置环境模块和监听
+					applicationArguments); // 2. 配置环境模块和监听，是配置文件加载入口，它会去执行SpringApplication构造器加载到的Listener
 			configureIgnoreBeanInfo(environment);
 			Banner printedBanner = printBanner(environment); // 打印Banner
 			context = createApplicationContext(); // 3. 创建并配置上下文（Spring容器）
